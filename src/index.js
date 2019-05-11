@@ -127,7 +127,7 @@ module.exports = class OmdbApi {
    * @returns {Promise<Response, Error>} - The response body wrapped in
    * cheerio.
    */
-  _get(query: Object) : Promise<Response> {
+  _get(query) {
     query.apikey = this.apiKey
     this._debug(`Making request to: '${this._baseUrl}?${stringify(query)}'`)
 
@@ -168,7 +168,7 @@ module.exports = class OmdbApi {
    * @param {?number}  config.season - The season you want to search for.
    * @returns {Promise<Content, Error>} - The promise to get content by id.
    */
-  byId({imdb, title, type, year, plot = 'short', tomatoes = false, season}) : Promise<Content> {
+  byId({imdb, title, type, year, plot = 'short', tomatoes = false, season}) {
     if (!imdb && !title) {
       throw new Error(`imdb and/or title needs to be given!`)
     }
@@ -202,7 +202,7 @@ module.exports = class OmdbApi {
    * @param {?number} [config.page=1}] - The page you want to search on.
    * @returns {Promise<Search, Error>} - The promise to get content by search.
    */
-  bySearch({search, type, year, page = 1}) : Promise<Search> {
+  bySearch({search, type, year, page = 1}) {
     if (!search) {
       throw new Error(`search is a required field!`)
     }
