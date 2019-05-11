@@ -196,8 +196,8 @@ module.exports = class OmdbApi {
    * @throws {Error} - TYPE is not a valid value for type!
    * @throws {Error} - PAGE is not a valid value for page!
    * @param {!Object} config - The config object for the method.
-   * @param {!sring} config.search - A query to search for.
-   * @param {?sring} config.type - The type of content you want to search for.
+   * @param {!string} config.search - A query to search for.
+   * @param {?string} config.type - The type of content you want to search for.
    * @param {?number} config.year - The year in which the content was released.
    * @param {?number} [config.page=1}] - The page you want to search on.
    * @returns {Promise<Search, Error>} - The promise to get content by search.
